@@ -1,6 +1,6 @@
 package m2.nbb.debug.img;
 
-/***
+/**
  * NumberImage用于储存单个图像，图像会被储存为
  * 二维数组形式和一维数组形式，同时具有输出图像功能
  */
@@ -9,7 +9,7 @@ public class NumberImage {
     private byte[][] img;
     private byte[] imgVector;
 
-    /***
+    /**
      * 根据给定的行列宽度，原始的图像数据，和数据的起始位置
      * 初始化这个图形
      * @param rows 图形的行数
@@ -28,7 +28,7 @@ public class NumberImage {
             }
     }
 
-    /***
+    /**
      * 返回图像相向量
      * @return 图像向量
      */
@@ -36,14 +36,14 @@ public class NumberImage {
         return this.imgVector;
     }
 
-    /***
+    /**
      * 用于绘制这一个图形
      */
     public void drawImg() {
-        drawImg('X', 'O');
+        drawImg('■', '□');
     }
 
-    /***
+    /**
      * 用于绘制一个图形，指定不同的像素点的绘制方式
      * @param yes 如果像素点大于0的绘制方式
      * @param no 如果像素点小于等于0的绘制方式
@@ -53,7 +53,6 @@ public class NumberImage {
             for (int j = 0; j < this.cols; j++)
                 if (this.img[i][j] != 0) System.out.print(yes);
                 else System.out.print(no);
-//                System.out.printf("%4s", String.valueOf(this.img[i][j]));
             System.out.println("");
         }
     }

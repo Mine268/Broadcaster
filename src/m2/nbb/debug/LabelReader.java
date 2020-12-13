@@ -3,7 +3,7 @@ package m2.nbb.debug;
 import java.io.FileInputStream;
 import java.io.InputStream;
 
-/***
+/**
  * LabelReader类用来读取数据并转化为数组，便于快速读取，主要用于调试
  */
 public class LabelReader {
@@ -11,7 +11,7 @@ public class LabelReader {
     private int count;
     private byte[] labelMatch;
 
-    /***
+    /**
      * 接受数据库地址来初始化实例
      * @param src 数据库的位置
      */
@@ -20,7 +20,7 @@ public class LabelReader {
         this.loadData();
     }
 
-    /***
+    /**
      * 转载数据库的数据到labelMatch数组中
      */
     private void loadData() {
@@ -45,16 +45,16 @@ public class LabelReader {
         }
     }
 
-    /***
+    /**
      * 获取第index个图像的标签
      * @param index index
      * @return 返回标签值
      */
-    public byte getLabelAt(int index) {
+    public byte getLabel(int index) {
         return this.labelMatch[index];
     }
 
-    /***
+    /**
      * 返回数据量
      * @return 数据量
      */
@@ -62,7 +62,7 @@ public class LabelReader {
         return this.count;
     }
 
-    /***
+    /**
      * 返回数据文件的名称
      * @return 文件名称
      */

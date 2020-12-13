@@ -4,7 +4,7 @@ import m2.nbb.debug.LabelReader;
 import java.io.FileInputStream;
 import java.io.InputStream;
 
-/***
+/**
  * ImageReader用于读取图像数据，主要作用是调试，
  * 不推荐用来读取图像数据以进行贝叶斯估计
  */
@@ -13,7 +13,7 @@ public class ImageReader {
     private int count;
     private NumberImage[] imgs;
 
-    ImageReader(String src) {
+    public ImageReader(String src) {
         this.src = src;
         this.loadDate();
     }
@@ -54,7 +54,7 @@ public class ImageReader {
         }
     }
 
-    /***
+    /**
      * 打印第index幅图像
      * @param index 图像的序号
      */
@@ -62,7 +62,7 @@ public class ImageReader {
         this.imgs[index].drawImg();
     }
 
-    /***
+    /**
      * 打印第index幅图像
      * @param index 图像编号
      * @param yes 如果大于阈值需要打印的字符
@@ -72,7 +72,7 @@ public class ImageReader {
         this.imgs[index].drawImg(yes, no);
     }
 
-    /***
+    /**
      * 获取第index个图像的图像向量
      * @param index 序号
      * @return 图像向量
@@ -81,11 +81,17 @@ public class ImageReader {
         return this.imgs[index].getImgVector();
     }
 
+    /**
+     * 返回数据个数
+     * @return 数据个数
+     */
+    public int getSize() { return this.count; }
+
     public static void main(String[] args) {
         LabelReader l1 = new LabelReader("D:\\study\\人工智能基础\\mnist\\t10k-labels.idx1-ubyte");
         ImageReader i1 = new ImageReader("D:\\study\\人工智能基础\\mnist\\t10k-images.idx3-ubyte");
         final int ind = 432;
-        System.out.println(l1.getLabelAt(ind));
+        System.out.println(l1.getLabel(ind));
         i1.printImg(ind, '■', '□');
     }
 }
