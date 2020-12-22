@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="javaFinalProject_NBB:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/javaFinalProject_NBB_jar</output-path>
+    <root id="archive" name="javaFinalProject_NBB.jar">
+      <element id="module-output" name="javaFinalProject_NBB" />
+    </root>
+  </artifact>
+</component>
